@@ -1,0 +1,282 @@
+#menu{
+	color:blue;
+	font-size: 13pt;
+}
+
+p{
+	word-spacing:3px; /* Интервал между словами */
+	text-indent:3%;  /* Отступ первой строки */
+}
+
+.text{
+	color:indigo;
+}
+
+big>i{                              /* Контекстный селектор */
+	width: 150px;	height: 100px; /*Размеры */
+    background: #fc0;             /* Цвет фона (желтый) */
+    border: 3px solid #fff;      /* Белая рамка */
+    border-radius: 8px;        /* Радиус скругления */	
+}
+
+font>h2{  		       	/* Дочерний селектор */
+	color:forestgreen; 
+	font-weight: 900; /* Уст. насыщенность шрифта. [100..900] шаг=100. Норм=400, полужирн=700. */
+}
+
+li+ol{       			  /* Соседний селектор */
+	font-style: oblique; /* Начертание шрифта */
+}
+
+A [src]{					    /* ПИСАТЬ С ПРОБЕЛОМ, ИНАЧЕ НЕ РАБОТАЕТ!!!Простой селектор атрибута */
+	border-style:ridge;        /* Стиль рамки */
+	border-color: saddlebrown;
+	border-width: 16px 18px 12px 12px;
+}
+
+UL[type="square"]{    /* ПИСАТЬ СЛИТНО, ИНАЧЕ НЕ РАБОТАЕТ!!!  Атрибут со значением*/
+	color: brown;
+}
+
+A[href^="http://"] {  /* ПИСАТЬ СЛИТНО, ИНАЧЕ НЕ РАБОТАЕТ!!!  Значение атрибута начинается с определённого текста*/
+	border-bottom: 2px solid #5be;
+	color: #555;
+	background-image: linear-gradient(180deg, transparent 65%, #5bf 65%);
+	background-position: 0% 100%;
+	background-repeat: no-repeat;
+	background-size: 100% 0%; 
+}
+
+A[href$=".html"]{    		 /* ПИСАТЬ СЛИТНО, ИНАЧЕ НЕ РАБОТАЕТ!!!  Значение атрибута оканчивается определённым текстом*/
+	text-decoration: none;  /* Убираем подчеркивание у ссылок */
+}
+
+[id*="st"] { 
+    background: radial-gradient(white, skyblue);                   /* Цвет фона */
+    box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Параметры тени */
+    padding: 10px;                       /* Расстояние от края рамки до текста */
+ }
+
+[size*="+"] {         /* Значение атрибута содержит указанный текст */
+    background: linear-gradient(red,green); /* Желтый цвет фона */
+	opacity:80%;
+	border-radius: 8px;
+	padding: 5px 100px;
+	border-radius: 20px;
+   }
+
+a {
+	color: white;
+	opacity:90%;
+} 
+
+h1 {
+    font-variant: small-caps; /* Устанавливаем капитель для заголовка */
+	letter-spacing: 2px;
+} 
+
+@font-face {
+    font-family: UnnamedRegular; /* Гарнитура шрифта */
+    src: url(../fonts/UnnamedRegular.eot); /* Для IE5-8 */
+    src: local(UnnamedRegular), url(../fonts/UnnamedRegular.ttf); /* Для остальных браузеров */
+	font-style: normal; 
+	font-weight: normal; 
+   }
+
+#game {
+	font-family: UnnamedRegular;
+	font-size: 20px;
+}
+
+ol{
+	list-style-type:disc;
+}
+
+P:first-letter {  /* Псевдоэлемент */
+    font-family: 'UnnamedRegular', Times, serif; /* Гарнитура шрифта первой буквы */
+    font-size: 150%; /* Размер шрифта первого символа */
+    color: red; /* Красный цвет текста */
+}
+
+A:link { 
+	color: #fff; /* Цвет непосещенных ссылок */
+}
+A:hover { 
+	color: #00FFFF; /* Цвет ссылок при наведении на них курсора мыши */
+}
+
+table {
+	border-collapse: collapse;
+}
+
+#centV:hover {
+	transition-delay: .3s;
+	transition-duration: .5s;
+	transform: translate(0px, 100px) scale(1.6);
+	background: none;
+}
+
+#levV:hover{
+	transition-delay: .3s;
+	transition-duration: .5s;
+	transform: translate(100px, 100px) scale(1.5);
+	background: none;
+	border:0px;
+}
+
+#levC:hover{
+	transition-delay: .3s;
+	transition-duration: .5s;
+	transform: translate(100px,-100px) scale(1.5);
+	background: none;
+}
+
+#cent:hover{
+	transition-delay: .3s;
+	transition-duration: .5s;
+	transform: translate(0px,-100px) scale(1.6);
+	background: none;
+}
+
+.podskaz {
+    position: relative;
+    display: inline;
+   /* border-bottom: 1px dotted black; */
+}
+
+.podskaz .textpodskaz {
+    visibility: hidden;
+    width: 132px;
+    background-color: green;
+    color: #fff;
+    text-align: left;
+    border-radius: 4px;
+    padding: 3px 8px;
+    /* Расположение всплывающей подсказки */
+    position: absolute;
+    z-index: 1; /* Наложение поверх других окон */
+    bottom: 100%;
+    left: 50%;
+    margin-left: -75px;
+}
+
+.podskaz:hover .textpodskaz {
+    visibility: visible;
+}
+
+IMG[background="image\фон3.png"]{ 
+	background-size: cover;
+}
+
+#dvicon {
+	width:190px;
+	transform: scale(-1, 1);
+	margin-left: 4px;
+}
+
+.icon{
+    animation-name: icon;
+    -webkit-animation-name: icon;
+ 
+    animation-duration: 10s;   
+    -webkit-animation-duration: 10s;
+ 
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+	animation-iteration-count: 5;  /* Число повторов анимации */
+}
+ 
+@keyframes icon {
+    0% {
+        transform: translateY(0%);  
+    }
+    50% {
+        transform: translateY(50%);  
+    }   
+    100% {
+        transform: translateY(0%);
+    }           
+}
+ 
+@-webkit-keyframes icon {
+    0% {
+        -webkit-transform: translateY(0%);  
+    }
+    50% {
+        -webkit-transform: translateY(50%);  
+    }   
+    100% {
+        -webkit-transform: translateY(0%);
+    }           
+}
+
+@media screen and (max-width:1350px){
+	.table td{
+		display:block;
+		padding-left: 25%;
+		padding-top:10%;
+	}
+	.table td img{
+		width:400px;		
+	}
+	
+}
+
+li a, .dropbtn {
+    display: inline-block;
+    /* color: white; */
+    text-align: center;
+    /* padding: 1px 1px; */
+    text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+    background-color: white;
+}
+
+li.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none; 
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 150px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* тень */
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 5px 10px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+}
+
+.dropdown-content a:hover {
+	background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: flex;
+	flex-direction: column-reverse; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
